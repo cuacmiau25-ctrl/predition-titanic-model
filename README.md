@@ -22,6 +22,6 @@ El dataset contiene información sobre los pasajeros (edad, sexo, clase de bolet
 ## 🏆 Resultados
 * **Mejor Modelo:** Random Forest Classifier
 * **Accuracy en Validación:** ~83%
-* **Puntaje en Kaggle:** `[Tu puntaje aquí, ej. 0.7846]`
+* **Puntaje en Kaggle:** `0.7846`
 
 
