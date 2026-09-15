@@ -6,7 +6,7 @@ Este repositorio contiene mi solución al clásico reto de Kaggle **"Titanic: Ma
 El dataset contiene información sobre los pasajeros (edad, sexo, clase de boleto, tarifa, etc.). A través de análisis exploratorio de datos (EDA), ingeniería de características y modelado predictivo, se construye un clasificador para predecir la variable objetivo `Survived`.
 
 ## 🛠️ Tecnologías y Librerías Utilizadas
-* **Lenguaje:** Python 3.x
+* **Lenguaje:** Python 
 * **Análisis de datos:** Pandas, NumPy
 * **Visualización:** Matplotlib, Seaborn
 * **Machine Learning:** Scikit-Learn (Random Forest, Logistic Regression, XGBoost)
@@ -21,7 +21,7 @@ El dataset contiene información sobre los pasajeros (edad, sexo, clase de bolet
 
 ## 🏆 Resultados
 * **Mejor Modelo:** Random Forest Classifier
-* **Accuracy en Validación:** ~82%
-* **Puntaje en Kaggle:** `[Tu puntaje aquí, ej. 0.7845]`
+* **Accuracy en Validación:** ~83%
+* **Puntaje en Kaggle:** `[Tu puntaje aquí, ej. 0.7846]`
 
 
