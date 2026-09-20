@@ -8,20 +8,22 @@ El pipeline completo vive en `notebooks/`, produce artefactos intermedios en `da
 predicciones finales en `outputs/`.
 
 ## Estructura de carpetas
+
+```
 proyecto_titanic/
 ├── data/
-│ ├── raw/ # train.csv, test.csv, gender_submission.csv (Kaggle)
-│ └── processed/ # train_clean.csv, test_clean.csv generados por 02_limpieza.ipynb
+│   ├── raw/            # train.csv, test.csv, gender_submission.csv (Kaggle)
+│   └── processed/      # train_clean.csv, test_clean.csv generados por 02_limpieza.ipynb
 ├── notebooks/
-│ ├── 01_exploracion.ipynb
-│ ├── 02_limpieza.ipynb
-│ └── 03_modelo.ipynb
-├── outputs/ # Predicciones finales (.csv) para submission a Kaggle
+│   ├── 01_exploracion.ipynb
+│   ├── 02_limpieza.ipynb
+│   └── 03_modelo.ipynb
+├── outputs/             # Predicciones finales (.csv) para submission a Kaggle
 ├── src/
-│ └── utils.py
+│   └── utils.py
 ├── requirements.txt
 └── README.md
-
+```
 
 ## Descarga de datos
 
@@ -61,34 +63,4 @@ Con hiperparámetros por defecto, Random Forest memorizaba el conjunto de entren
 | Modelo | Accuracy train (antes) | Accuracy train (después) | Gap train−test (antes) | Gap train−test (después) |
 |---|---:|---:|---:|---:|
 | Random Forest (sin límite → `max_depth=5`, `min_samples_leaf=4`, `min_samples_split=10`) | 0.962 | 0.857 | 0.197 | 0.080 |
-| Logistic Regression (sin regularización adicional) | 0.836 | 0.836 | 0.014 | 0.014 |
-
-Random Forest sin restricciones alcanzaba un accuracy de train cercano a 0.96 con una caída marcada en test. Al
-limitar la profundidad de los árboles y el mínimo de muestras por hoja mediante `GridSearchCV`, la brecha
-train-test se redujo de 0.197 a 0.080 sin sacrificar accuracy en test. Logistic Regression no presentó overfitting
-relevante en ningún momento del proyecto, consistente con una relación mayormente lineal entre las variables y la
-supervivencia en este dataset.
-
-## Resultados finales (holdout interno, 179 pasajeros)
-
-| Modelo | Accuracy | Precisión | Recall | F1 |
-|---|---:|---:|---:|---:|
-| **Logistic Regression** | **0.821** | 0.768 | 0.768 | 0.768 |
-| Random Forest (optimizado, `class_weight='balanced'`) | 0.777 | 0.679 | 0.797 | 0.733 |
-| Random Forest (default) | 0.765 | 0.696 | 0.696 | 0.696 |
-
-Modelo recomendado: Logistic Regression. Obtiene el mejor accuracy y la menor brecha train-test del proyecto,
-manteniéndose competitivo con Random Forest incluso después de que este último fue optimizado. Se evaluó
-adicionalmente el ajuste de pesos por clase (`class_weight='balanced'`) sobre Random Forest, lo que mejoró el
-recall de 0.696 a 0.797 a costa de precisión — trade-off relevante en escenarios donde el costo de un falso
-negativo es mayor al de un falso positivo, aunque no aplicable como criterio principal en esta competencia, donde
-Kaggle evalúa únicamente por accuracy.
-
-**Puntaje en el leaderboard de Kaggle:** `0.78468` (Random Forest optimizado).
-
-## Tecnologías utilizadas
-
-* **Lenguaje:** Python
-* **Análisis de datos:** pandas, NumPy
-* **Visualización:** Matplotlib, seaborn
-* **Machine Learning:** scikit-learn (Logistic Regression, Random Forest, Gradient Boosting)
+| Logistic Regression
