@@ -34,13 +34,17 @@ Los datos no están incluidos en el repositorio. Se obtienen desde la página de
 evaluación de este proyecto usa un split estratificado 80/20 interno sobre `train.csv` para medir métricas
 supervisadas de forma honesta antes de generar la predicción final sobre `test.csv`.
 
+
 ## Instalación de dependencias
 
-```bash
+Crea el entorno virtual desde VS Code (terminal)
+
+\`\`\`
 python -m venv .venv
-.venv/Scripts/activate      # En Windows (PowerShell: .venv\Scripts\Activate.ps1)
 pip install -r requirements.txt
-```
+\`\`\`
+
+Con el entorno activado en la terminal integrada de VS Code, instala las dependencias con el comando anterior.
 
 ## Resumen del pipeline
 
