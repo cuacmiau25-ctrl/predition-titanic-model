@@ -67,4 +67,4 @@ Con hiperparámetros por defecto, Random Forest memorizaba el conjunto de entren
 | Modelo | Accuracy train (antes) | Accuracy train (después) | Gap train−test (antes) | Gap train−test (después) |
 |---|---:|---:|---:|---:|
 | Random Forest (sin límite → `max_depth=5`, `min_samples_leaf=4`, `min_samples_split=10`) | 0.962 | 0.857 | 0.197 | 0.080 |
-| Logistic Regression
+| Logistic Regression (sin regularización adicional) | 0.836 | 0.836 | 0.014 | 0.014 |
